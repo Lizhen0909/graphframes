@@ -1,7 +1,7 @@
 // Your sbt build file. Guides on how to write one can be found at
 // http://www.scala-sbt.org/0.13/docs/index.html
 
-val sparkVer = sys.props.getOrElse("spark.version", "2.1.1")
+val sparkVer = sys.props.getOrElse("spark.version", "2.0.1")
 val sparkBranch = sparkVer.substring(0, 3)
 val defaultScalaVer = sparkBranch match {
   case "2.0" => "2.11.8"
@@ -45,8 +45,9 @@ libraryDependencies += "org.scalatest" %% "scalatest" % defaultScalaTestVer % "t
 // These versions are ancient, but they cross-compile around scala 2.10 and 2.11.
 // Update them when dropping support for scala 2.10
 libraryDependencies ++= Seq(
-  "com.typesafe.scala-logging" %% "scala-logging-api" % "2.1.2",
-  "com.typesafe.scala-logging" %% "scala-logging-slf4j" % "2.1.2"
+//  "com.typesafe.scala-logging" %% "scala-logging-api" % "2.1.2",
+//  "com.typesafe.scala-logging" %% "scala-logging-slf4j" % "2.1.2"
+    "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0"
 )
 
 parallelExecution := false
